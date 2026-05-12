@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --punch:    #E63946;
+    --honey:    #F1FAEE;
+    --frost:    #A8DADC;
+    --cerulean: #457B9D;
+    --navy:     #1D3557;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #1D3557;
+    color: #F1FAEE;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  ::selection {
+    background: #E63946;
+    color: #F1FAEE;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1D3557;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #457B9D;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E63946;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-display text-4xl md:text-5xl font-bold text-honey mb-2;
+  }
+  .section-sub {
+    @apply font-mono text-sm text-frost tracking-widest uppercase mb-12;
+  }
+  .glass-card {
+    background: rgba(69, 123, 157, 0.08);
+    border: 1px solid rgba(168, 218, 220, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-sm font-mono text-sm tracking-wider font-medium transition-all duration-300;
+    background: #E63946;
+    color: #F1FAEE;
+  }
+  .btn-primary:hover {
+    background: #c8303c;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(230, 57, 70, 0.3);
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-sm font-mono text-sm tracking-wider font-medium transition-all duration-300;
+    border: 1px solid rgba(168, 218, 220, 0.4);
+    color: #F1FAEE;
+  }
+  .btn-outline:hover {
+    border-color: #A8DADC;
+    background: rgba(168, 218, 220, 0.08);
+    transform: translateY(-1px);
+  }
+  .tech-badge {
+    @apply font-mono text-xs px-3 py-1 rounded-sm;
+    background: rgba(69, 123, 157, 0.2);
+    border: 1px solid rgba(168, 218, 220, 0.25);
+    color: #A8DADC;
+  }
+}
+
+/* Cursor */
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: #E63946;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease;
+}
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(230, 57, 70, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+.cursor-ring.hovering {
+  width: 56px; height: 56px;
+  border-color: #A8DADC;
+  background: rgba(168, 218, 220, 0.05);
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* Scan line */
+.scan-line {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168,218,220,0.15), transparent);
+  pointer-events: none;
+  z-index: 2;
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: linear-gradient(rgba(69,123,157,0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(69,123,157,0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow ring */
+.glow-ring {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
