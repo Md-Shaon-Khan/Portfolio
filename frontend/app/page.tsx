@@ -15,7 +15,7 @@ import Loader from '@/components/Loader'
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden bg-slate-950 text-slate-100">
+    <main className="relative overflow-hidden bg-slate-950 text-slate-100 pt-20 sm:pt-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(71,177,255,0.16),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(95,221,255,0.08),_transparent_22%)]" />
       <div className="pointer-events-none absolute inset-0 backdrop-grid opacity-30" />
       <ScrollProgress />
@@ -25,12 +25,12 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <AboutSection />
         <EducationTimeline />
-        <ExperienceSection />
         <Certifications />
+        <ExperienceSection />
         <TechStackGrid />
         <ProjectSection />
-        <ResumeCta />
         <HackathonSection />
+        <ResumeCta />
         <ContactSection />
       </div>
       <BackToTop />
