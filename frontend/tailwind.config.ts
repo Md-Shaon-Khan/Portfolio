@@ -1,41 +1,41 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        punch:   '#E63946',
-        honey:   '#F1FAEE',
-        frost:   '#A8DADC',
-        cerulean:'#457B9D',
-        navy:    '#1D3557',
+        punch: '#E63946',
+        honey: '#F1FAEE',
+        frost: '#A8DADC',
+        cerulean: '#57A9C1',
+        cyan: '#7FDBFF',
+        slate: '#0B1119',
+        ink: '#0B1119',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        mono:    ['"JetBrains Mono"', 'monospace'],
-        body:    ['"DM Sans"', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
+        mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
+      },
+      boxShadow: {
+        glow: '0 20px 80px rgba(11, 17, 25, 0.35)',
+      },
+      backgroundImage: {
+        'grid-slate': 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
       },
       animation: {
-        'float':      'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s ease-in-out infinite',
-        'scan':       'scan 3s linear infinite',
+        float: 'float 6s ease-in-out infinite',
+        shimmer: 'shimmer 1.6s linear infinite',
       },
       keyframes: {
         float: {
           '0%,100%': { transform: 'translateY(0px)' },
-          '50%':     { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-14px)' },
         },
-        scan: {
-          '0%':   { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100vh)' },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
-      },
-      backgroundImage: {
-        'grid-navy': 'linear-gradient(rgba(69,123,157,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(69,123,157,0.05) 1px,transparent 1px)',
-      },
-      backgroundSize: {
-        'grid': '60px 60px',
       },
     },
   },
