@@ -34,6 +34,12 @@ const projects = [
     github: 'https://github.com/Md-Shaon-Khan/Student_Attendance_System',
     labels: ['Education', 'Backend', 'Automation'],
   },
+  {
+    title: 'Smart Agriculture Platform',
+    description: 'Upcoming agriculture intelligence system for crop monitoring, farm analytics, and sustainable automation.',
+    github: 'https://github.com/Md-Shaon-Khan',
+    labels: ['Agriculture', 'AI', 'IoT'],
+  },
 ]
 
 const additional = [

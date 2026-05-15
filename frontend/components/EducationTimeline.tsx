@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 
 const educationItems = [
   {
-    year: '2024 — Now',
+    year: '2024 — Present',
     title: 'B.Sc. in Information Technology',
     institution: 'Institute of Information Technology (IIT), Jahangirnagar University',
-    detail: 'CGPA: 3.82 (up to 4th Semester)',
+    detail: 'Ongoing degree with a CGPA of 3.82 up to the 4th Semester',
   },
   {
     year: '2023',

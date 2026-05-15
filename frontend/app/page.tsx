@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import AboutSection from '@/components/AboutSection'
 import EducationTimeline from '@/components/EducationTimeline'
@@ -7,7 +8,6 @@ import ProjectSection from '@/components/ProjectSection'
 import Certifications from '@/components/Certifications'
 import HackathonSection from '@/components/HackathonSection'
 import ContactSection from '@/components/ContactSection'
-import GithubActivity from '@/components/GithubActivity'
 import ResumeCta from '@/components/ResumeCta'
 import ScrollProgress from '@/components/ScrollProgress'
 import BackToTop from '@/components/BackToTop'
@@ -20,9 +20,9 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 backdrop-grid opacity-30" />
       <ScrollProgress />
       <Loader />
+      <Navbar />
       <Hero />
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <GithubActivity />
         <AboutSection />
         <EducationTimeline />
         <ExperienceSection />

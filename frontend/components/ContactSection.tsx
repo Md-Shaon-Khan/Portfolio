@@ -16,7 +16,7 @@ export default function ContactSection() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-10">
           <span className="section-label">Contact</span>
-          <h2 className="section-heading">Professional contact</h2>
+          <h2 className="section-heading">Contact</h2>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">

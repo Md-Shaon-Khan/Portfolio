@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Download, Mail, Star } from 'lucide-react'
@@ -99,6 +100,15 @@ export default function Hero() {
           <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[30px] border border-slate-700/80 bg-slate-900/80 p-5 shadow-glow">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(120,206,255,0.14),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(44,213,255,0.08),_transparent_40%)]" />
             <div className="relative overflow-hidden rounded-[28px] border border-slate-700/70 bg-slate-950/90 p-6">
+              <div className="mb-6 overflow-hidden rounded-[28px] border border-slate-800/70 bg-slate-900/90">
+                <Image
+                  src="/dffac4b7-83dc-4e53-bdb6-a3885a2e34b6.jpg"
+                  alt="Shaon Khan portrait"
+                  width={720}
+                  height={720}
+                  className="h-[320px] w-full object-cover"
+                />
+              </div>
               <div className="flex items-center justify-between gap-4 pb-6">
                 <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Personal Brand</p>
