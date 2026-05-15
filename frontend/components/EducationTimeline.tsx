@@ -4,22 +4,22 @@ import { motion } from 'framer-motion'
 
 const educationItems = [
   {
-    year: '2024 — Present',
+    year: '2023 — Present',
     title: 'B.Sc. in Information Technology',
     institution: 'Institute of Information Technology (IIT), Jahangirnagar University',
     detail: 'Ongoing degree with a CGPA of 3.82 up to the 4th Semester',
   },
   {
-    year: '2023',
+    year: '2022',
     title: 'HSC — Science',
     institution: 'Jahangirnagar University School & College',
-    detail: 'Physics 95%, Chemistry 95%, Mathematics 95%',
+    detail: 'Physics 97%, Chemistry 97%, Mathematics 97%',
   },
   {
-    year: '2021',
+    year: '2022',
     title: 'SSC — Science',
     institution: 'Jahangirnagar University School & College',
-    detail: 'Physics 95%, Chemistry 95%, Mathematics 95%',
+    detail: 'Physics 93%, Chemistry 93%, Mathematics 96%, Higher Math 95%',
   },
 ]
 

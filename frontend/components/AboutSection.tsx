@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 const infoCards = [
   { label: 'CGPA', value: '3.82', detail: 'Up to 4th Semester' },
   { label: 'Email', value: 'shaon.iit52@gmail.com', detail: 'Professional contact' },
-  { label: 'HSC GPA', value: '5.00', detail: 'Higher than SSC' },
-  { label: 'Focus Areas', value: 'AI · ML · DL · IoT · Backend', detail: 'Technical direction' },
+  { label: 'HSC GPA', value: '5.00', detail: 'Science stream' },
+  { label: 'SSC GPA', value: '5.00', detail: 'Science stream' },
 ]
 
 const focusPoints = [

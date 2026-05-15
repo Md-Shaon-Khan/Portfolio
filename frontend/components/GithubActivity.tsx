@@ -1,33 +1,26 @@
 'use client'
 
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { Github, Activity } from 'lucide-react'
-
-interface Repo {
-  id: number
-  name: string
-  description: string | null
-  html_url: string
-  language: string | null
-  stargazers_count: number
-}
+import { Github } from 'lucide-react'
 
 export default function GithubActivity() {
-  const [repos, setRepos] = useState<Repo[]>([])
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch('https://api.github.com/users/Md-Shaon-Khan/repos?sort=updated&per_page=6')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('GitHub data not available')
-        }
-        return response.json()
-      })
-      .then((data) => setRepos(data))
-      .catch(() => setError('Unable to fetch GitHub repositories at this time.'))
-  }, [])
+  return (
+    <section className="relative py-16">
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mb-10">
+          <span className="section-label">GitHub</span>
+          <h2 className="section-heading">Recent repositories</h2>
+        </div>
+        <div className="rounded-[32px] border border-slate-700/60 bg-slate-900/85 p-8 shadow-glow">
+          <div className="flex items-center gap-3 text-slate-200">
+            <Github size={18} />
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Repository showcase</p>
+          </div>
+          <p className="mt-4 text-slate-300">Project updates and contributions are available directly on GitHub. The contribution graph and API status badge have been removed.</p>
+        </div>
+      </div>
+    </section>
+  )
+}
 
   return (
     <section className="relative py-16">
