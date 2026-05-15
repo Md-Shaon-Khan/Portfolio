@@ -30,7 +30,7 @@ export default function ContactSection() {
             <p className="section-label">Message</p>
             <h3 className="text-2xl font-semibold text-slate-100">Two direct contact actions</h3>
             <p className="mt-4 text-slate-300 leading-7">
-              I am currently seeking internship opportunities and technical collaborations in AI, ML, Development and IoT. Reach out via email for formal proposals or WhatsApp for a direct follow-up.
+              I am currently seeking internship opportunities and technical collaborations in AI, ML, Development and IoT. Reach out via email for formal proposals or WhatsApp for a direct follow-up
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
