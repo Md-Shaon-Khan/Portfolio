@@ -16,7 +16,7 @@ const educationItems = [
     detail: 'Physics 97%, Chemistry 97%, Mathematics 97%',
   },
   {
-    year: '2022',
+    year: '2020',
     title: 'SSC — Science',
     institution: 'Jahangirnagar University School & College',
     detail: 'Physics 93%, Chemistry 93%, Mathematics 96%, Higher Math 95%',
