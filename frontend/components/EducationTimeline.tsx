@@ -19,7 +19,7 @@ const educationItems = [
     year: '2020',
     title: 'SSC — Science',
     institution: 'Jahangirnagar University School & College',
-    detail: 'Physics 93%, Chemistry 93%, Mathematics 96%, Higher Math 95%',
+    detail: 'Mathematics 96%, Higher Math 95%', 'Physics 93%, Chemistry 93%',
   },
 ]
 
