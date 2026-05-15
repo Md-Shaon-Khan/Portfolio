@@ -164,26 +164,26 @@ export default function Contact() {
             <div className="glass-card rounded-sm p-6 space-y-5">
               <p className="font-mono text-xs text-punch tracking-widest uppercase">Connect</p>
               {[
-                { icon: FiGithub,   label: 'GitHub',   href: 'https://github.com/Md-Shaon-Khan',                      sub: '@Md-Shaon-Khan' },
-                { icon: FiLinkedin, label: 'LinkedIn',  href: 'https://www.linkedin.com/in/md-shaon-khan-01003433a/',   sub: 'md-shaon-khan' },
-                { icon: FiMail,     label: 'Email',     href: 'mailto:shaon@example.com',                               sub: 'shaon@example.com' },
-              ].map(link => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="w-9 h-9 border border-frost/15 rounded-sm flex items-center justify-center group-hover:border-punch/50 group-hover:bg-punch/5 transition-all duration-200">
-                    <link.icon size={14} className="text-frost/50 group-hover:text-punch transition-colors" />
-                  </div>
-                  <div>
-                    <p className="font-mono text-xs text-honey/70 group-hover:text-honey transition-colors">{link.label}</p>
-                    <p className="font-mono text-[10px] text-frost/35">{link.sub}</p>
-                  </div>
-                </a>
-              ))}
+                  { label: 'GitHub',   href: 'https://github.com/Md-Shaon-Khan',                      sub: '@Md-Shaon-Khan' },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/md-shaon-khan-01003433a/',   sub: 'md-shaon-khan' },
+                  { label: 'Email',    href: 'mailto:shaon@example.com',                               sub: 'shaon@example.com' },
+                ].map(link => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 group"
+                  >
+                    <div className="w-9 h-9 border border-frost/15 rounded-sm flex items-center justify-center group-hover:border-punch/50 group-hover:bg-punch/5 transition-all duration-200">
+                      <span className="sr-only">{link.label}</span>
+                    </div>
+                    <div>
+                      <p className="font-mono text-xs text-honey/70 group-hover:text-honey transition-colors">{link.label}</p>
+                      <p className="font-mono text-[10px] text-frost/35">{link.sub}</p>
+                    </div>
+                  </a>
+                ))}
             </div>
 
             {/* Availability */}

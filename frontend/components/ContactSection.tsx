@@ -1,85 +1,78 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, MapPin, MessageSquare, Phone } from 'lucide-react'
+import SectionHeader from './SectionHeader'
+import ContactCard from './ContactCard'
+import ContactForm from './ContactForm'
 
-const contacts = [
-  { label: 'Email', value: 'shaon.iit52@gmail.com', href: 'mailto:shaon.iit52@gmail.com', icon: Mail },
-  { label: 'GitHub', value: 'github.com/Md-Shaon-Khan', href: 'https://github.com/Md-Shaon-Khan', icon: Github },
-  { label: 'LinkedIn', value: 'md-shaon-khan-01003433a', href: 'https://www.linkedin.com/in/md-shaon-khan-01003433a/', icon: Linkedin },
-  { label: 'Location', value: 'Jahangirnagar, Bangladesh', href: '#contact', icon: MapPin },
+type ContactItem = {
+  label: string
+  value?: string
+  href: string
+  external?: boolean
+}
+
+const contactItems: ContactItem[] = [
+  { label: 'Email', value: 'shaon.iit52@gmail.com', href: 'mailto:shaon.iit52@gmail.com?subject=Portfolio Inquiry' },
+  { label: 'GitHub', value: 'github.com/Md-Shaon-Khan', href: 'https://github.com/Md-Shaon-Khan', external: true },
+  { label: 'LinkedIn', value: 'md-shaon-khan-01003433a', href: 'https://www.linkedin.com/in/md-shaon-khan-01003433a/', external: true },
+  { label: 'Location', value: 'Jahangirnagar, Bangladesh', href: '#contact' },
 ]
 
-export default function ContactSection() {
+export default function ContactSection(): JSX.Element {
   return (
     <section id="contact" className="relative py-24">
       <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="mb-10">
-          <span className="section-label">Contact</span>
-          <h2 className="section-heading">Contact</h2>
-        </div>
+        <SectionHeader
+          eyebrow="Contact"
+          title="Get in touch"
+          subtitle="Open to AI/ML Internship, Research Collaboration, and Software Engineering Opportunities."
+        />
 
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr]">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
-            className="glass-card rounded-[32px] border border-slate-700/60 bg-slate-900/85 p-8 shadow-glow"
+            transition={{ duration: 0.6 }}
+            className="glass-card rounded-2xl border border-slate-700/60 bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-8 shadow-sm"
           >
-            <p className="section-label">Message</p>
-            <h3 className="text-2xl font-semibold text-slate-100">Two direct contact actions</h3>
-            <p className="mt-4 text-slate-300 leading-7">
-              Reach out via email for formal proposals or WhatsApp for a direct follow-up.
-            </p>
+            <p className="text-sm text-slate-300">Message</p>
+            <h3 className="mt-2 text-2xl font-semibold text-slate-100">Send a professional message</h3>
+            <p className="mt-3 text-slate-400">Use the form below or reach out directly via Email or WhatsApp.</p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-6">
+              <ContactForm />
+            </div>
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
-                href="mailto:shaon.iit52@gmail.com"
-                className="btn-primary w-full justify-center"
+                href="mailto:shaon.iit52@gmail.com?subject=Portfolio Inquiry"
+                className="btn-primary w-full sm:w-auto justify-center"
               >
-                <Mail size={18} />
-                Email Me
+                Email
               </a>
               <a
-                href="https://api.whatsapp.com/send?phone=+8801633040670"
+                href="https://wa.me/8801633040670"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-secondary w-full justify-center"
+                className="btn-secondary w-full sm:w-auto justify-center"
               >
-                <Phone size={18} />
                 WhatsApp
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
             className="space-y-4"
           >
-            {contacts.map((item) => {
-              const Icon = item.icon
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="glass-card flex items-center gap-4 rounded-[28px] border border-slate-700/60 bg-slate-900/85 p-6 shadow-glow transition-all hover:-translate-y-1"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-500/10 text-cyan-300">
-                    <Icon size={20} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-100">{item.label}</p>
-                    <p className="mt-1 text-sm text-slate-400">{item.value}</p>
-                  </div>
-                </a>
-              )
-            })}
+            {contactItems.map((c) => (
+              <ContactCard key={c.label} label={c.label} value={c.value} href={c.href} external={c.external} />
+            ))}
           </motion.div>
         </div>
       </div>
