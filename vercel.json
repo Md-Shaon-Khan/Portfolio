@@ -12,6 +12,10 @@
   ],
   "routes": [
     {
+      "src": "/googleb27af7f5cfae0aa1.html",
+      "dest": "frontend/googleb27af7f5cfae0aa1.html"
+    },
+    {
       "src": "^/_/backend/(.*)",
       "dest": "backend/app/main.py"
     },
