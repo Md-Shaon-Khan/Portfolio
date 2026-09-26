@@ -23,8 +23,9 @@ export default function ResumeCta() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
+              {/* Notun tab e PDF open korbe */}
               <a
-                href="https://drive.google.com/file/d/1AIaVI1-ITkc0eQufdNMiFCSGVklpOqiH/view?usp=sharing"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary"
@@ -32,8 +33,11 @@ export default function ResumeCta() {
                 <FileText size={18} />
                 View CV
               </a>
+
+              {/* Direct local download hobe */}
               <a
-                href="https://drive.google.com/uc?export=download&id=1AIaVI1-ITkc0eQufdNMiFCSGVklpOqiH"
+                href="/resume.pdf"
+                download="Shaon_Khan_Resume.pdf"
                 className="btn-secondary"
               >
                 <Download size={18} />
