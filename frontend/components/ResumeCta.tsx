@@ -24,7 +24,7 @@ export default function ResumeCta() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://drive.google.com/file/d/1h2hCBg-gbBpUMhvtTIXAAJ_VTpKAcToI/view?usp=sharing"
+                href="https://drive.google.com/file/d/1AIaVI1-ITkc0eQufdNMiFCSGVklpOqiH/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary"
@@ -33,7 +33,7 @@ export default function ResumeCta() {
                 View CV
               </a>
               <a
-                href="https://drive.google.com/uc?export=download&id=1h2hCBg-gbBpUMhvtTIXAAJ_VTpKAcToI"
+                href="https://drive.google.com/uc?export=download&id=1AIaVI1-ITkc0eQufdNMiFCSGVklpOqiH"
                 className="btn-secondary"
               >
                 <Download size={18} />
