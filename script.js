@@ -97,7 +97,7 @@
   });
 
   /* Contact form: delivered to the owner's inbox through FormSubmit */
-  var EMAIL = '20233658719@juniv.edu';
+  var EMAIL = 'shaon.iit52@gmail.com';
   var form = $('#form'), note = $('#formNote'), sendBtn = form.querySelector('button[type=submit]');
   function resetBtn() { sendBtn.disabled = false; sendBtn.textContent = 'Send message'; }
 
