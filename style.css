@@ -249,3 +249,53 @@ body{overflow-x:hidden}
 @media(max-width:560px){
   .hero-photo .frame{width:150px}
 }
+
+/* v8: about, at-a-glance slider */
+.about-split{grid-template-columns:1.3fr 1fr;align-items:center}
+.glance{background:var(--soft);border:1px solid var(--mist);border-left:4px solid var(--teal);border-radius:12px;padding:1.5rem 1.8rem}
+.glance h3{font-size:1.1rem;margin-bottom:1rem}
+.g-slides{display:grid;min-height:5.2rem}
+.g-slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateX(26px);
+  transition:opacity .5s ease,transform .5s ease,visibility .5s}
+.g-slide.active{opacity:1;visibility:visible;transform:none}
+.g-slide.prev{transform:translateX(-26px)}
+.g-label{display:block;font-size:.82rem;font-weight:600;color:var(--teal);margin-bottom:.35rem}
+.g-value{font:600 1.3rem/1.35 var(--serif);color:var(--navy);max-width:none}
+.g-dots{display:flex;gap:.2rem;margin-top:1.1rem}
+.g-dots button{width:26px;height:20px;border:0;background:transparent;cursor:pointer;position:relative}
+.g-dots button::before{content:"";position:absolute;left:3px;right:3px;top:8px;height:4px;border-radius:2px;background:var(--mist);transition:background .3s}
+.g-dots button[aria-current=true]::before{background:var(--teal)}
+@media(max-width:900px){
+  .about-split{grid-template-columns:1fr}
+  .glance{padding:1.3rem 1.2rem}
+}
+@media(prefers-reduced-motion:reduce){.g-slide{transition:none}}
+
+/* v9: justified text on all devices */
+html,body{max-width:100%;overflow-x:clip}
+
+.lead,
+.about-split p,
+.t-item p,
+.cert p,
+.card p,
+.card li,
+.p-sum,
+.p-list li,
+.hack p,
+.hack li,
+.contact p,
+.more,
+.section>p{
+  text-align:justify;
+  text-justify:inter-word;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  overflow-wrap:break-word;
+}
+
+/* paragraphs fill their column, so both edges line up */
+.about-split p{max-width:none}
+
+/* short labels stay left-aligned */
+.card .meta,.stat span,.note{text-align:left}
