@@ -224,3 +224,35 @@ body{overflow-x:hidden}
 
 /* v6: current work */
 .stats.flush{margin-top:2.5rem}
+
+/* v7: mobile image handling (desktop unchanged) */
+@media (max-width: 900px) {
+  /* Hero: compact profile photo on top, intro text below */
+  .hero {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    gap: 1.8rem;
+  }
+  .hero-photo { order: -1; }
+  .hero-photo .frame {
+    max-width: 170px;
+    margin: 0;
+    border-radius: 100px 100px 12px 12px;
+    box-shadow: -8px 8px 0 var(--soft), -8px 8px 0 1px var(--mist);
+  }
+
+  /* About: photo moves below the text as a wide banner */
+  .about-photo {
+    order: 2;
+    aspect-ratio: 16 / 10;
+    max-height: 300px;
+    width: 100%;
+  }
+  .about-photo img { object-position: center 20%; }
+}
+
+@media (max-width: 560px) {
+  .hero-photo .frame { max-width: 140px; }
+  .about-photo { aspect-ratio: 4 / 3; max-height: 240px; }
+}

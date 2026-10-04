@@ -40,7 +40,7 @@
     progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
     nav.classList.toggle('stuck', y > 20);
 
-    if (!reduce && parallax && y < window.innerHeight) {
+    if (!reduce && parallax && y < window.innerHeight && window.innerWidth > 900) {
       parallax.style.transform = 'translateY(' + (y * 0.12).toFixed(1) + 'px)';
     }
 
