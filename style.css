@@ -45,7 +45,8 @@ p+p{margin-top:1rem}
 .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
 .hero-photo .frame{position:relative;border-radius:200px 200px 16px 16px;overflow:hidden;aspect-ratio:4/5;max-width:380px;margin-left:auto;
   background:var(--mist);box-shadow:18px 18px 0 var(--soft),18px 18px 0 1px var(--mist);will-change:transform}
-.hero-photo img,.about-photo img{width:100%;height:100%;object-fit:cover}
+/* image fills the frame without influencing its size */
+.hero-photo .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 
 /* buttons */
 .btn{display:inline-block;padding:.75rem 1.5rem;border-radius:8px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);
@@ -58,7 +59,6 @@ p+p{margin-top:1rem}
 .btn.light:hover{background:var(--white);color:var(--navy)}
 
 /* about */
-.about-photo{border-radius:16px;overflow:hidden;aspect-ratio:1/1;background:var(--mist)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem}
 .stat{border-top:2px solid var(--teal);padding-top:1rem}
 .stat b{display:block;font:600 2.4rem/1 var(--serif);color:var(--navy)}
@@ -225,34 +225,27 @@ body{overflow-x:hidden}
 /* v6: current work */
 .stats.flush{margin-top:2.5rem}
 
-/* v7: mobile image handling (desktop unchanged) */
-@media (max-width: 900px) {
-  /* Hero: compact profile photo on top, intro text below */
-  .hero {
-    min-height: auto;
-    padding-top: 5.5rem;
-    padding-bottom: 3rem;
-    gap: 1.8rem;
+/* v7: single photo (hero only), fixed mobile placement */
+.about{max-width:var(--wrap)}
+@media(max-width:900px){
+  .hero{
+    min-height:auto;
+    align-items:start;
+    padding-top:5.5rem;
+    padding-bottom:3rem;
+    gap:1.6rem;
   }
-  .hero-photo { order: -1; }
-  .hero-photo .frame {
-    max-width: 170px;
-    margin: 0;
-    border-radius: 100px 100px 12px 12px;
-    box-shadow: -8px 8px 0 var(--soft), -8px 8px 0 1px var(--mist);
+  /* photo first, then the intro text, with no overlap */
+  .hero-photo{order:-1;justify-self:start;width:100%}
+  .hero-photo .frame{
+    width:170px;
+    max-width:100%;
+    margin:0 0 0 8px;
+    border-radius:100px 100px 12px 12px;
+    box-shadow:-8px 8px 0 var(--soft),-8px 8px 0 1px var(--mist);
   }
-
-  /* About: photo moves below the text as a wide banner */
-  .about-photo {
-    order: 2;
-    aspect-ratio: 16 / 10;
-    max-height: 300px;
-    width: 100%;
-  }
-  .about-photo img { object-position: center 20%; }
+  .hero h1{margin-top:.8rem}
 }
-
-@media (max-width: 560px) {
-  .hero-photo .frame { max-width: 140px; }
-  .about-photo { aspect-ratio: 4 / 3; max-height: 240px; }
+@media(max-width:560px){
+  .hero-photo .frame{width:150px}
 }
