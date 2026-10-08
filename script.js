@@ -14,8 +14,7 @@
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.add('in');
-      var c = e.target.querySelector('[data-count]');
-      if (c) countUp(c);
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
       io.unobserve(e.target);
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
